@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Bug]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
