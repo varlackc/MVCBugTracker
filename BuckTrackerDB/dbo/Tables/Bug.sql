@@ -8,5 +8,8 @@
     [CreatedByUserId] INT NULL, 
     [Details] NVARCHAR(50) NULL, 
     [PriorityLevel] NCHAR(10) NULL, 
-    [UserAssignedId] INT NULL
+    [UserAssignedId] INT NULL, 
+    CONSTRAINT [FK_UserAssignedId] FOREIGN KEY ([UserAssignedId]) REFERENCES [User]([Id]), 
+    CONSTRAINT [FK_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Project]([Id]), 
+    CONSTRAINT [FK_CreatedByUserId] FOREIGN KEY ([CreatedByUserId]) REFERENCES [User]([Id])
 )
