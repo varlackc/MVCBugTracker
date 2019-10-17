@@ -69,4 +69,7 @@
   <ItemGroup>
     <RefactorLog Include="BuckTrackerDB.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish Profiles\BugTrackerDB.publish.xml" />
+  </ItemGroup>
 </Project>
