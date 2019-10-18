@@ -7,5 +7,9 @@ namespace MVCBuckTrackerDemo.Models
 {
     public class Tags
     {
+        public int Id { get; set; }
+        public string TagDescription { get; set; }
+        public string TagType { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }
