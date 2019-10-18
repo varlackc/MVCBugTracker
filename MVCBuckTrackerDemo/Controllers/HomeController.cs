@@ -26,5 +26,12 @@ namespace MVCBuckTrackerDemo.Controllers
 
             return View();
         }
+
+        //Add a Project View
+        public ActionResult ProjectList()
+        {
+            ViewBag.Message = "Project List";
+            return View();
+        }
     }
 }

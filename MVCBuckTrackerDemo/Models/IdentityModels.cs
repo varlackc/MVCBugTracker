@@ -29,5 +29,7 @@ namespace MVCBuckTrackerDemo.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.ProjectModel> ProjectModels { get; set; }
     }
 }

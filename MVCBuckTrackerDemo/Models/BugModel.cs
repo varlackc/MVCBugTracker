@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVCBuckTrackerDemo.Models
 {
-    public class Bug
+    public class BugModel
     {
         public int Id { get; set; }
         public int ProjectId { get; set; }
