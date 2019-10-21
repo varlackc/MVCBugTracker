@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCBuckTrackerDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,7 +29,7 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
         //Add a Project View
-        public ActionResult ProjectList()
+        public ActionResult ProjectList(ProjectModel model)
         {
             ViewBag.Message = "Project List";
             return View();

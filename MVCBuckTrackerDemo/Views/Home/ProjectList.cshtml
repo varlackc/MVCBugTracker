@@ -1,5 +1,16 @@
 ﻿@model IEnumerable<MVCBuckTrackerDemo.Models.ProjectModel>
 
+@{ 
+    //Check for conditional statements
+    if (Model == null)
+    {
+        <h2>The Model is null</h2>
+    }
+    else {
+        <h2>The Model is not null</h2>
+    }
+}
+
 @{
     ViewBag.Title = "Project List";
 }
