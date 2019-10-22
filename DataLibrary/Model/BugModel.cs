@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Model
 {
-    public class Bug
+    public class BugModel
     {
         public int Id { get; set; }
         public int ProjectId { get; set; }

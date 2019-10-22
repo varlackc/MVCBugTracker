@@ -45,15 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\BugProcessor.cs" />
+    <Compile Include="BusinessLogic\ProjectProcessor.cs" />
+    <Compile Include="BusinessLogic\TagsProcessor.cs" />
+    <Compile Include="BusinessLogic\UserProcessor.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
-    <Compile Include="Model\Bug.cs" />
-    <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\Tags.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\BugModel.cs" />
+    <Compile Include="Model\ProjectModel.cs" />
+    <Compile Include="Model\TagsModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DataLibrary;
+using static DataLibrary.BusinessLogic.ProjectProcessor;
 using System.Web.Mvc;
 
 namespace MVCBuckTrackerDemo.Controllers
@@ -28,11 +30,82 @@ namespace MVCBuckTrackerDemo.Controllers
             return View();
         }
 
+        //Regular Project View
+        public ActionResult ProjectList()
+        {
+            ViewBag.Message = "Project List From View Bag Message";
+
+            //load the data
+            var data = LoadProjects();
+            //create a list of projects
+            List<ProjectModel> projects = new List<ProjectModel> ();
+
+            // loop to organize the data in the projects list
+            foreach (var row in data)
+            {
+                projects.Add(new ProjectModel {
+                    Id = row.Id, 
+                    Name = row.Name, 
+                    Description = row.Description,
+                    DeadLine = row.DeadLine,
+                    BugId = row.BugId
+
+                });
+            }
+
+            return View(projects);
+        }
+
+
         //Add a Project View
+        [HttpPost]
         public ActionResult ProjectList(ProjectModel model)
+        {
+            if (ModelState.IsValid) {
+                int recordsCreated = CreateProject(model.Id, 
+                    model.Name, model.Description, model.DeadLine, model.BugId);
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Message = "Project List";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProjectToList(ProjectModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int recordsCreated = CreateProject(model.Id,
+                    model.Name, model.Description, model.DeadLine, model.BugId);
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Message = "Project List";
+            return View();
+        }
+
+        /*
+        public ActionResult Create(ProjectModel model)
         {
             ViewBag.Message = "Project List";
             return View();
         }
+        */
+        [HttpPost]
+        public ActionResult Create(ProjectModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int recordsCreated = CreateProject(model.Id,
+                    model.Name, model.Description, model.DeadLine, model.BugId);
+                return RedirectToAction("ProjectList");
+            }
+
+            ViewBag.Message = "Project List";
+            return View();
+        }
+
+
     }
 }
