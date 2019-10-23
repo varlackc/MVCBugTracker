@@ -47,8 +47,8 @@ namespace MVCBuckTrackerDemo.Controllers
                     Id = row.Id, 
                     Name = row.Name, 
                     Description = row.Description,
-                    DeadLine = row.DeadLine,
-                    BugId = row.BugId
+                    DeadLine = row.DeadLine
+                    //BugId = row.BugId
 
                 });
             }
@@ -63,7 +63,7 @@ namespace MVCBuckTrackerDemo.Controllers
         {
             if (ModelState.IsValid) {
                 int recordsCreated = CreateProject(model.Id, 
-                    model.Name, model.Description, model.DeadLine, model.BugId);
+                    model.Name, model.Description, model.DeadLine);
                 return RedirectToAction("Index");
             }
 
@@ -77,7 +77,7 @@ namespace MVCBuckTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = CreateProject(model.Id,
-                    model.Name, model.Description, model.DeadLine, model.BugId);
+                    model.Name, model.Description, model.DeadLine);
                 return RedirectToAction("Index");
             }
 
@@ -98,7 +98,7 @@ namespace MVCBuckTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = CreateProject(model.Id,
-                    model.Name, model.Description, model.DeadLine, model.BugId);
+                    model.Name, model.Description, model.DeadLine);
                 return RedirectToAction("ProjectList");
             }
 

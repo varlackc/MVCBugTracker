@@ -28,6 +28,6 @@ namespace MVCBuckTrackerDemo.Models
         [Required(ErrorMessage ="Must Have A Dead Line")]
         public DateTime DeadLine { get; set; }// setup the default value
 
-        public int BugId { get; set; }
+        //public int BugId { get; set; }
     }
 }
