@@ -48,5 +48,26 @@ namespace DataLibrary.BusinessLogic
             //call the sql data access to delete the project entry
             SqlDataAccess.DeleteData(sql, id);
         }
+
+        //Method to update Project
+        public static void UpdateProject(int id, string name,
+        string description)//will have to add deadline after getting it to work
+        {
+            //organize the data that will be added
+            ProjectModel data = new ProjectModel
+            {
+                Id = id,
+                Name = name,
+                Description = description
+            };
+
+            //create the sql command
+            string sql = @" UPDATE project
+                            SET Name = @Name, Description = @Description
+                            WHERE Id =@Id";
+
+            //call the sql data access to delete the project entry
+            SqlDataAccess.DeleteData(sql, data);
+        }
     }
 }
