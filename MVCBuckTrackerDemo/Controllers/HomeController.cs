@@ -85,13 +85,13 @@ namespace MVCBuckTrackerDemo.Controllers
             return View();
         }
 
-        /*
-        public ActionResult Create(ProjectModel model)
+        
+        public ActionResult Create()
         {
             ViewBag.Message = "Project List";
             return View();
         }
-        */
+        
         [HttpPost]
         public ActionResult Create(ProjectModel model)
         {
