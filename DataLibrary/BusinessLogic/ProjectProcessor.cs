@@ -39,6 +39,17 @@ namespace DataLibrary.BusinessLogic
             return SqlDataAccess.LoadData<ProjectModel>(sql);
         }
 
+        //Methodto load data
+        public static ProjectModel LoadOneProject(int id)
+        {
+            //create the sql command
+            string sql =  @"SELECT Id, Name, Description, DeadLine
+                            FROM dbo.Project
+                            WHERE Id = @id";
+            //call the sql data access to load the project data
+            return SqlDataAccess.LoadOne<ProjectModel>(sql, id); // the <ProjectModel> is used to specify the type
+        }
+
         //Method to delete Project
         public static void DeleteProject(int id) {
 
@@ -67,7 +78,9 @@ namespace DataLibrary.BusinessLogic
                             WHERE Id =@Id";
 
             //call the sql data access to delete the project entry
-            SqlDataAccess.DeleteData(sql, data);
+            SqlDataAccess.UpdateData(sql, data);
         }
+
+        
     }
 }

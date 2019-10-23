@@ -112,5 +112,31 @@ namespace MVCBuckTrackerDemo.Controllers
             return RedirectToAction("ProjectList");
         }
 
+        [HttpGet]
+        public ActionResult UpdateProjects(int id)
+        {
+            //get the results from the databaase
+            var resultModel = LoadOneProject(id);
+            //convert the results in a way that the view can understand
+            ProjectModel projectModel = new ProjectModel();
+            projectModel.Id = resultModel.Id;
+            projectModel.Name = resultModel.Name;
+            projectModel.Description = resultModel.Description;
+            projectModel.DeadLine = resultModel.DeadLine;
+            return View(projectModel);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateProjects(ProjectModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                UpdateProject(model.Id,
+                    model.Name, model.Description);
+            }
+
+            return RedirectToAction("ProjectList"); ;
+        }
+
     }
 }

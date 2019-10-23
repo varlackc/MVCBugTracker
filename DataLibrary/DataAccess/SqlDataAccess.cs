@@ -26,6 +26,16 @@ namespace DataLibrary.DataAccess
             }
         }
 
+        //Delete data
+        public static T LoadOne<T>(string sql, int id)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+               return cnn.Query<T>(sql, new { id }).FirstOrDefault();//Returning one individual item
+            }
+        }
+
+
         //Saves data 
         public static int SaveData<T>(string sql, T data)
         {
@@ -52,6 +62,8 @@ namespace DataLibrary.DataAccess
                 cnn.Execute(sql, data);
             }
         }
+
+
 
     }
 }
