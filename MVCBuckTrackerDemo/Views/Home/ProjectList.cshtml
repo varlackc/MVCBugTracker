@@ -38,35 +38,45 @@
             @Html.DisplayNameFor(model => model.DeadLine)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.BugId)
-        </th>*@
+                @Html.DisplayNameFor(model => model.BugId)
+            </th>*@
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DeadLine)
-    </td>
-    @*<td>
-            @Html.DisplayFor(modelItem => item.BugId)
-        </td>*@
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
+        using (Html.BeginForm("DeleteProjects", "Home", new { id = item.Id }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeadLine)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.BugId)
+                    </td>*@
+                <td>
+                    @* HTML Helpers in Razor *@
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @*Html.ActionLink("Delete", "DeleteProject", new { id = item.Id })*@
+
+                    @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
+                    <input type="submit" value="Delete"
+                           onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');"/>
+
+                </td>
+
+            </tr>
+        }
     }
 
 </table>

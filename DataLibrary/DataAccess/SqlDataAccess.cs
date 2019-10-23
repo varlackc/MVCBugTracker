@@ -34,5 +34,14 @@ namespace DataLibrary.DataAccess
                 return cnn.Execute(sql, data);
             }
         }
+
+        //Delete data
+        public static void DeleteData(string sql, int id)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+               cnn.Execute(sql, new { id });//modify to allow the Id parameter to be used by //new {id}
+            }
+        }
     }
 }

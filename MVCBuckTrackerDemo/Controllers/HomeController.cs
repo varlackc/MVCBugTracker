@@ -106,6 +106,11 @@ namespace MVCBuckTrackerDemo.Controllers
             return View();
         }
 
+        public ActionResult DeleteProjects(int Id) {
+            DeleteProject(Id);
+            //return View();
+            return RedirectToAction("ProjectList");
+        }
 
     }
 }

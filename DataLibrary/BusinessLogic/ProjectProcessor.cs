@@ -38,5 +38,15 @@ namespace DataLibrary.BusinessLogic
             //call the sql data access to load the project data
             return SqlDataAccess.LoadData<ProjectModel>(sql);
         }
+
+        //Method to delete Project
+        public static void DeleteProject(int id) {
+
+            //create the sql command
+            string sql = @"DELETE FROM Project WHERE Id = @id";
+
+            //call the sql data access to delete the project entry
+            SqlDataAccess.DeleteData(sql, id);
+        }
     }
 }
