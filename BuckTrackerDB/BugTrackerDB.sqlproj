@@ -62,9 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\User.sql" />
-    <Build Include="dbo\Tables\Project.sql" />
     <Build Include="dbo\Tables\Bug.sql" />
     <Build Include="dbo\Tables\Tags.sql" />
+    <Build Include="dbo\Tables\Project.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BuckTrackerDB.refactorlog" />

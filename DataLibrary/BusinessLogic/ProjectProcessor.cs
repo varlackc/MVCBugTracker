@@ -24,8 +24,8 @@ namespace DataLibrary.BusinessLogic
             };
 
             //create an sql query to create the new project
-            string sql = @"insert into dbo.Project (Id, Name, Description, DeadLine, BugId)
-                            values (@Id, @Name, @Description, @DeadLine, @BugId);";
+            string sql = @"insert into dbo.Project (Id, Name, Description, DeadLine)
+                            values (@Id, @Name, @Description, @DeadLine);";
 
             //call the sqlDataAccess to create the new project
             return SqlDataAccess.SaveData(sql, data);
