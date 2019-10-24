@@ -50,6 +50,7 @@ namespace MVCBuckTrackerDemo.Controllers
             return View();
         }
 
+        /*
         [HttpPost]
         public ActionResult AddProjectToList(ProjectModel model)
         {
@@ -63,7 +64,7 @@ namespace MVCBuckTrackerDemo.Controllers
             ViewBag.Message = "Project List";
             return View();
         }
-
+        */
         
         public ActionResult Create()
         {

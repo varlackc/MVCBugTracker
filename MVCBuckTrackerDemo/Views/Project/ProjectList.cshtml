@@ -33,7 +33,7 @@
 
     @foreach (var item in Model)
     {
-        using (Html.BeginForm("DeleteProjects", "Home", new { id = item.Id }))
+        using (Html.BeginForm("DeleteProjects", "Project", new { id = item.Id }))
         {
             <tr>
                 <td>

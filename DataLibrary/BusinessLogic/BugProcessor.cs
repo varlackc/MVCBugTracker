@@ -23,7 +23,7 @@ namespace DataLibrary.BusinessLogic
             };
 
             //create an sql query to create the new project
-            string sql = @"insert into dbo.Project (Description, Status, Details, PriorityLevel, BugProjectId)
+            string sql = @"insert into dbo.Bug (Description, Status, Details, PriorityLevel, BugProjectId)
                             values (@Description, @Status, @Details, @PriorityLevel, @BugProjectId);";
 
             //call the sqlDataAccess to create the new project
@@ -46,7 +46,7 @@ namespace DataLibrary.BusinessLogic
         {
             //create the sql command
             string sql = @"SELECT Id, Description, Status, Details, PriorityLevel, BugProjectId
-                            FROM dbo.Project
+                            FROM dbo.Bug
                             WHERE Id = @id";
             //call the sql data access to load the project data
             return SqlDataAccess.LoadOne<BugModel>(sql, id); // the <ProjectModel> is used to specify the type
