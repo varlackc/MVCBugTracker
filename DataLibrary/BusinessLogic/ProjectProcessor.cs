@@ -53,8 +53,12 @@ namespace DataLibrary.BusinessLogic
         //Method to delete Project
         public static void DeleteProject(int id) {
 
+            //delete all of the bugs related to the project
+            string sql = @"DELETE FROM dbo.Bug WHERE BugProjectId = @id";//create the sql query
+            SqlDataAccess.DeleteData(sql, id);// access the data access to delete files
+
             //create the sql command
-            string sql = @"DELETE FROM dbo.Project WHERE Id = @id";
+            sql = @"DELETE FROM dbo.Project WHERE Id = @id";
 
             //call the sql data access to delete the project entry
             SqlDataAccess.DeleteData(sql, id);

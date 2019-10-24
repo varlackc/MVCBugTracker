@@ -36,6 +36,7 @@ namespace MVCBuckTrackerDemo.Controllers
                 });
             }
 
+            ViewBag.message = id;
             return View(projects);
         }
 

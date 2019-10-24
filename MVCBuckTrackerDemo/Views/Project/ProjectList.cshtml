@@ -53,12 +53,12 @@
                     </td>*@
             <td>
                 @* HTML Helpers in Razor *@
-                @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }) |
-                @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, null) |
+                @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class ="btn btn-default btn-large"} ) |
+                @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, new { @class ="btn btn-default btn-large"}) |
                 @*Html.ActionLink("Delete", "DeleteProject", new { id = item.Id })*@
 
                 @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
-                <input type="submit" value="Delete"
+                <input class="btn btn-default" type="submit" value="Delete"
                        onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
 
             </td>

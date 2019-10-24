@@ -36,36 +36,6 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
 
-        //Add a Project View
-        [HttpPost]
-        public ActionResult ProjectList(ProjectModel model)
-        {
-            if (ModelState.IsValid) {
-                int recordsCreated = CreateProject(model.Id, 
-                    model.Name, model.Description, model.DeadLine);
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Message = "Project List";
-            return View();
-        }
-
-        /*
-        [HttpPost]
-        public ActionResult AddProjectToList(ProjectModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                int recordsCreated = CreateProject(model.Id,
-                    model.Name, model.Description, model.DeadLine);
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Message = "Project List";
-            return View();
-        }
-        */
-        
         public ActionResult Create()
         {
             ViewBag.Message = "Project List";
@@ -87,6 +57,7 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
         public ActionResult DeleteProjects(int Id) {
+
             DeleteProject(Id);
             //return View();
             return RedirectToAction("ProjectList");
