@@ -54,7 +54,7 @@ namespace DataLibrary.BusinessLogic
         public static void DeleteProject(int id) {
 
             //create the sql command
-            string sql = @"DELETE FROM Project WHERE Id = @id";
+            string sql = @"DELETE FROM dbo.Project WHERE Id = @id";
 
             //call the sql data access to delete the project entry
             SqlDataAccess.DeleteData(sql, id);
@@ -73,7 +73,7 @@ namespace DataLibrary.BusinessLogic
             };
 
             //create the sql command
-            string sql = @" UPDATE project
+            string sql = @" UPDATE dbo.project
                             SET Name = @Name, Description = @Description
                             WHERE Id =@Id";
 

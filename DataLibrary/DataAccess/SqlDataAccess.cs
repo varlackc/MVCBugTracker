@@ -18,6 +18,17 @@ namespace DataLibrary.DataAccess
             return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
         }
 
+
+        //Load the data with id parameters 
+        public static List<T> LoadData<T>(string sql, int id)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.Query<T>(sql, new { id }).ToList();
+            }
+        }
+
+
         //Load the data without parameters 
         public static List<T> LoadData<T>(string sql)
         {

@@ -54,7 +54,7 @@
             <td>
                 @* HTML Helpers in Razor *@
                 @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, null) |
                 @*Html.ActionLink("Delete", "DeleteProject", new { id = item.Id })*@
 
                 @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@

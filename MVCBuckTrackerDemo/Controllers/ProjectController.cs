@@ -1,35 +1,14 @@
 ﻿using MVCBuckTrackerDemo.Models;
-using System;
+//using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DataLibrary;
-
+//using DataLibrary.BusinessLogic;
+using static DataLibrary.BusinessLogic.ProjectProcessor;
 using System.Web.Mvc;
 
 namespace MVCBuckTrackerDemo.Controllers
 {
-    public class HomeController : Controller
+    public class ProjectController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        /*
         //Regular Project View
         public ActionResult ProjectList()
         {
@@ -137,37 +116,6 @@ namespace MVCBuckTrackerDemo.Controllers
 
             return RedirectToAction("ProjectList"); ;
         }
-
-        //------------ Bug Section ------------------
-
-        //Regular Project View
-        public ActionResult BugList(int bugProjectId)
-        {
-            //load the data
-            var data = LoadBugs(bugProjectId);
-            //create a list of projects
-            List<ProjectModel> projects = new List<ProjectModel>();
-
-            // loop to organize the data in the projects list
-            foreach (var row in data)
-            {
-                projects.Add(new BugModel
-                {
-                    
-                    Id = row.Id,
-                    Description = row.Description,
-                    Status = ,
-                    Details = ,
-                    PriorityLevel = ,
-                    BugProjectId =
-
-                });
-            }
-
-            return View(projects);
-        }
-        */
-        //-------------------------------------------
 
     }
 }

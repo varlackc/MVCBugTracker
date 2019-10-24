@@ -171,6 +171,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BugController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -289,6 +291,10 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\DeleteProject.cshtml" />
     <Content Include="Views\Home\UpdateProjects.cshtml" />
+    <Content Include="Views\Project\ProjectList.cshtml" />
+    <Content Include="Views\Project\UpdateProjects.cshtml" />
+    <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Bug\BugList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

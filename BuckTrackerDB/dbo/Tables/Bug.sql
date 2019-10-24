@@ -5,5 +5,8 @@
     [TimeStamp] NVARCHAR(50) NULL, 
     [Status] NCHAR(10) NULL, 
     [Details] NVARCHAR(50) NULL, 
-    [PriorityLevel] NCHAR(10) NULL
+    [PriorityLevel] NCHAR(10) NULL, 
+    [BugProjectId] INT NOT NULL, 
+    CONSTRAINT [FK_BugProjectId] FOREIGN KEY ([BugProjectId]) REFERENCES [Project]([Id])
+
 )
