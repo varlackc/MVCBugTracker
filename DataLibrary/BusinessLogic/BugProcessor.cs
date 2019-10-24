@@ -63,7 +63,7 @@ namespace DataLibrary.BusinessLogic
         }
 
         //Method to update Project
-        public static void UpdateBug(int id, string description,
+        public static void UpdateBug( int id, string description,
         string status, string details, string priorityLevel, int bugProjectId)//will have to add deadline after getting it to work
         {
             //organize the data that will be added
@@ -79,7 +79,7 @@ namespace DataLibrary.BusinessLogic
 
             //create the sql command
             string sql = @" UPDATE dbo.Bug
-                            SET Id = @Id, Description = @Description, Status = @Status,
+                            SET Description = @Description, Status = @Status,
                                 Details = @Details, PriorityLevel = @PriorityLevel, BugProjectId = @BugProjectId
                             WHERE Id =@Id";
 

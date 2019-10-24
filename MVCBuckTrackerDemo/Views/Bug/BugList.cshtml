@@ -2,13 +2,13 @@
 
 @{
     ViewBag.Title = "BugList";
-    int retrievedId = 1003;
+    int retrievedId = Model.FirstOrDefault().BugProjectId;
 }
 
 <h2>BugList</h2>
 
 <p>
-    @Html.ActionLink("Report Bug", "ReportBug", new { id = retrievedId })
+    @Html.ActionLink("Report Bug", "ReportBug", new { id = retrievedId})
 </p>
 <table class="table">
     <tr>
@@ -32,9 +32,7 @@
 
     @foreach (var item in Model)
     {
-        //allow for the delete button to function
-        using (Html.BeginForm("DeleteBugs", "Bug", new { id = item.BugProjectId, bugId = item.Id }))
-        {
+
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
@@ -52,12 +50,11 @@
                     @Html.DisplayFor(modelItem => item.BugProjectId)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }) |
-                    <input type="submit" value="Delete"
+                    @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id}, new { @class ="btn btn-default btn-large"}) |
+                    <input class="btn btn-default" type="submit" value="Delete"
                            onclick="return confirm(
                      'Are you sure you want to delete record with ID = @item.Id bug: @item.Description');" />
                 </td>
             </tr>
         }
-    }
 </table>
