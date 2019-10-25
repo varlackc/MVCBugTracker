@@ -79,7 +79,7 @@ namespace DataLibrary.BusinessLogic
             //create the sql command
             string sql = @" UPDATE dbo.project
                             SET Name = @Name, Description = @Description
-                            WHERE Id =@Id";
+                            WHERE Id = @Id";
 
             //call the sql data access to delete the project entry
             SqlDataAccess.UpdateData(sql, data);
