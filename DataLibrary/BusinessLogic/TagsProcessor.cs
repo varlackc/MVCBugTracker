@@ -77,7 +77,7 @@ namespace DataLibrary.BusinessLogic
             //create the sql command
             string sql = @" UPDATE dbo.Tags
                             SET TagDescription = @TagDescription, TagType = @TagType, TimeStamp = @TimeStamp 
-                            WHERE Id = @Id;";
+                            WHERE Id = @Id";
 
             //call the sql data access to delete the Tags entry
             SqlDataAccess.UpdateData(sql, data);

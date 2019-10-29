@@ -2,6 +2,6 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [TagDescription] NVARCHAR(50), 
-    [TagType] NCHAR(10), 
+    [TagType] NCHAR(50), 
     [TimeStamp] DateTime2(7)
 )
