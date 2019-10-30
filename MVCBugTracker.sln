@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker", "MVCBuckTrackerDemo\BugTracker.csproj", "{B167B652-1EFE-43CB-98FA-74F35D5E3771}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{971E5B75-AE2D-43A0-9494-9090287F63EC}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BugTrackerDB", "BuckTrackerDB\BugTrackerDB.sqlproj", "{2B9E11E5-8C45-4494-8944-14D3DED61E01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker", "MVCBugTrackerDemo\BugTracker.csproj", "{B167B652-1EFE-43CB-98FA-74F35D5E3771}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BugTrackerDB", "BugTrackerDB\BugTrackerDB.sqlproj", "{2B9E11E5-8C45-4494-8944-14D3DED61E01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Release|Any CPU.Build.0 = Release|Any CPU
 		{971E5B75-AE2D-43A0-9494-9090287F63EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{971E5B75-AE2D-43A0-9494-9090287F63EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{971E5B75-AE2D-43A0-9494-9090287F63EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{971E5B75-AE2D-43A0-9494-9090287F63EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B167B652-1EFE-43CB-98FA-74F35D5E3771}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B9E11E5-8C45-4494-8944-14D3DED61E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B9E11E5-8C45-4494-8944-14D3DED61E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B9E11E5-8C45-4494-8944-14D3DED61E01}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
