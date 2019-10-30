@@ -11,13 +11,12 @@ namespace MVCBuckTrackerDemo.Controllers
 {
     public class UserController : Controller
     {
-        //------------ Bug Section ------------------
 
         //Regular Project View
-        public ActionResult TagList()
+        public ActionResult UserList()
         {
             //load the data
-            var data = LoadTags();
+            var data = LoadUsers();
             //create a list of projects
             List<TagsModel> tags = new List<TagsModel>();
 
@@ -37,7 +36,7 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
 
-        public ActionResult CreateTag()
+        public ActionResult CreateUser()
         {
             TagsModel tag = new TagsModel();
            // bug.BugProjectId = id;
@@ -46,7 +45,7 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateTag(TagsModel model)
+        public ActionResult CreateUser(TagsModel model)
         {
             if (ModelState.IsValid)
             {
@@ -62,18 +61,18 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
 
-        public ActionResult DeleteTag(int id)
+        public ActionResult DeleteUser(int id)
         {
-            DeleteTags(id);
+            DeleteUsers(id);
             //return View();
             return RedirectToAction("TagList");
         }
         
         [HttpGet]
-        public ActionResult UpdateTag(int id)
+        public ActionResult UpdateUser(int id)
         {
             //get the results from the databaase
-            var resultModel = LoadOneTag(id);
+            var resultModel = LoadOneUser(id);
             //convert the results in a way that the view can understand
             TagsModel TagsModel = new TagsModel();
 
@@ -84,7 +83,7 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateTag(TagsModel model)
+        public ActionResult UpdateUser(TagsModel model)
         {
             if (ModelState.IsValid)
             {
