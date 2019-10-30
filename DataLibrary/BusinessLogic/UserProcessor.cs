@@ -34,7 +34,7 @@ namespace DataLibrary.BusinessLogic
         {
             //create the sql command
             string sql = @"SELECT Id, UserName, FirstName, LastName
-                            FROM dbo.User";
+                            FROM dbo.[User]";
             //call the sql data access to load the User data
             return SqlDataAccess.LoadData<UserModel>(sql);
         }
