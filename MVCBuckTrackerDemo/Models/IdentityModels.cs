@@ -35,5 +35,7 @@ namespace MVCBuckTrackerDemo.Models
         public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.BugModel> BugModels { get; set; }
 
         public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.TagsModel> TagsModels { get; set; }
+
+        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.UserModel> UserModels { get; set; }
     }
 }

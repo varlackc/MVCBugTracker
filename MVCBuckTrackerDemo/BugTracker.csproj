@@ -302,6 +302,7 @@
     <Content Include="Views\Tag\TagList.cshtml" />
     <Content Include="Views\Tag\CreateTag.cshtml" />
     <Content Include="Views\Tag\UpdateTag.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
