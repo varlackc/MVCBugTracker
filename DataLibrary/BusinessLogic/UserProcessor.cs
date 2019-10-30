@@ -61,7 +61,7 @@ namespace DataLibrary.BusinessLogic
         }
 
         //Method to update User
-        public static void UpdateUser(int id, string userName, string firstName, string lastName)
+        public static void UpdateUsers(int id, string userName, string firstName, string lastName)
         {
 
             //organize the data that will be added

@@ -44,11 +44,11 @@ namespace MVCBuckTrackerDemo.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateUser(TagsModel model)
+        public ActionResult CreateUser(UserModel model)
         {
             if (ModelState.IsValid)
             {
-                int recordsCreated = CreateUser(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
+                int recordsCreated = CreateUsers(model.UserName, model.FirstName, model.LastName);
 
                     //TimeStamp = timeStamp
                 //var id = model.BugProjectId;
@@ -62,7 +62,7 @@ namespace MVCBuckTrackerDemo.Controllers
 
         public ActionResult DeleteUser(int id)
         {
-            DeleteUsers(id);
+            DeleteUser(id);
             //return View();
             return RedirectToAction("TagList");
         }
@@ -73,20 +73,22 @@ namespace MVCBuckTrackerDemo.Controllers
             //get the results from the databaase
             var resultModel = LoadOneUser(id);
             //convert the results in a way that the view can understand
-            TagsModel TagsModel = new TagsModel();
+            UserModel TagsModel = new UserModel();
 
             TagsModel.Id = resultModel.Id;
-            TagsModel.TagDescription = resultModel.TagDescription;
-            TagsModel.TagType = resultModel.TagType;
+            TagsModel.UserName = resultModel.UserName;
+            TagsModel.FirstName = resultModel.FirstName;
+            TagsModel.LastName = resultModel.LastName;
+
             return View(TagsModel);
         }
 
         [HttpPost]
-        public ActionResult UpdateUser(TagsModel model)
+        public ActionResult UpdateUser(UserModel model)
         {
             if (ModelState.IsValid)
             {
-                UpdateTags(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
+                UpdateUsers(model.Id, model.UserName, model.FirstName, model.LastName);
             }
             //var id = model.BugProjectId;
             return RedirectToAction("TagList"); ;
