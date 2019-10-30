@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.ComponentModel;
 
-namespace MVCBuckTrackerDemo.Models
+namespace MVCBugTrackerDemo.Models
 {
     public class ProjectModel
     {

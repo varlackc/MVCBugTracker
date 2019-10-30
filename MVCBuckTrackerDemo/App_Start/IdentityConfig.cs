@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using MVCBuckTrackerDemo.Models;
+using MVCBugTrackerDemo.Models;
 
-namespace MVCBuckTrackerDemo
+namespace MVCBugTrackerDemo
 {
     public class EmailService : IIdentityMessageService
     {

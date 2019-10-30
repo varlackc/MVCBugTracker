@@ -1,11 +1,11 @@
-﻿using MVCBuckTrackerDemo.Models;
+﻿using MVCBugTrackerDemo.Models;
 //using System;
 using System.Collections.Generic;
 //using DataLibrary.BusinessLogic;
 using static DataLibrary.BusinessLogic.ProjectProcessor;
 using System.Web.Mvc;
 
-namespace MVCBuckTrackerDemo.Controllers
+namespace MVCBugTrackerDemo.Controllers
 {
     public class ProjectController : Controller
     {

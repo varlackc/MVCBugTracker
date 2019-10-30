@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using MVCBuckTrackerDemo.Models;
+using MVCBugTrackerDemo.Models;
 
-namespace MVCBuckTrackerDemo
+namespace MVCBugTrackerDemo
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace MVCBuckTrackerDemo
+namespace MVCBugTrackerDemo
 {
     public class BundleConfig
     {

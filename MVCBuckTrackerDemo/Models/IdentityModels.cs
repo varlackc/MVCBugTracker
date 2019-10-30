@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace MVCBuckTrackerDemo.Models
+namespace MVCBugTrackerDemo.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -30,12 +30,12 @@ namespace MVCBuckTrackerDemo.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.ProjectModel> ProjectModels { get; set; }
+        public System.Data.Entity.DbSet<MVCBugTrackerDemo.Models.ProjectModel> ProjectModels { get; set; }
 
-        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.BugModel> BugModels { get; set; }
+        public System.Data.Entity.DbSet<MVCBugTrackerDemo.Models.BugModel> BugModels { get; set; }
 
-        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.TagsModel> TagsModels { get; set; }
+        public System.Data.Entity.DbSet<MVCBugTrackerDemo.Models.TagsModel> TagsModels { get; set; }
 
-        public System.Data.Entity.DbSet<MVCBuckTrackerDemo.Models.UserModel> UserModels { get; set; }
+        public System.Data.Entity.DbSet<MVCBugTrackerDemo.Models.UserModel> UserModels { get; set; }
     }
 }

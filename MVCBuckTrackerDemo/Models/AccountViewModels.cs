@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MVCBuckTrackerDemo.Models
+namespace MVCBugTrackerDemo.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -1,4 +1,4 @@
-﻿using MVCBuckTrackerDemo.Models;
+﻿using MVCBugTrackerDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using DataLibrary;
 
 using System.Web.Mvc;
 
-namespace MVCBuckTrackerDemo.Controllers
+namespace MVCBugTrackerDemo.Controllers
 {
     public class HomeController : Controller
     {

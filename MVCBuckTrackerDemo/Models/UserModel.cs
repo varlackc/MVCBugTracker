@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MVCBuckTrackerDemo.Models
+namespace MVCBugTrackerDemo.Models
 {
     public class UserModel
     {

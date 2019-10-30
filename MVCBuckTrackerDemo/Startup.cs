@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(MVCBuckTrackerDemo.Startup))]
-namespace MVCBuckTrackerDemo
+[assembly: OwinStartupAttribute(typeof(MVCBugTrackerDemo.Startup))]
+namespace MVCBugTrackerDemo
 {
     public partial class Startup
     {
