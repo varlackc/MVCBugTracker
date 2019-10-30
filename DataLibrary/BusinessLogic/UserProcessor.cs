@@ -22,7 +22,7 @@ namespace DataLibrary.BusinessLogic
             };
 
             //create an sql query to create the new User
-            string sql = @"insert into dbo.User (UserName, FirstName, LastName)
+            string sql = @"insert into dbo.[User] (UserName, FirstName, LastName)
                             values (@UserName, @FirstName, @LastName)";
 
             //call the sqlDataAccess to create the new User
@@ -44,7 +44,7 @@ namespace DataLibrary.BusinessLogic
         {
             //create the sql command
             string sql = @"SELECT Id, UserName, FirstName, LastName
-                            FROM dbo.User
+                            FROM dbo.[User]
                             WHERE Id = @id";
             //call the sql data access to load the User data
             return SqlDataAccess.LoadOne<UserModel>(sql, id); // the <UserModel> is used to specify the type
@@ -54,7 +54,7 @@ namespace DataLibrary.BusinessLogic
         public static void DeleteUser(int id)
         {
             //create the sql command
-            string sql = @"DELETE FROM dbo.User WHERE Id = @id";
+            string sql = @"DELETE FROM dbo.[User] WHERE Id = @id";
 
             //call the sql data access to delete the User entry
             SqlDataAccess.DeleteData(sql, id);
@@ -74,7 +74,7 @@ namespace DataLibrary.BusinessLogic
             };
 
             //create the sql command
-            string sql = @" UPDATE dbo.User
+            string sql = @" UPDATE dbo.[User]
                             SET UserName = @UserName, FirstName = @FirstName, LastName = @LastName 
                             WHERE Id = @Id";
 
