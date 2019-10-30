@@ -93,8 +93,6 @@ namespace MVCBugTrackerDemo.Controllers
             //var id = model.BugProjectId;
             return RedirectToAction("TagList"); ;
         }
-
-
         //-------------------------------------------
 
     }
