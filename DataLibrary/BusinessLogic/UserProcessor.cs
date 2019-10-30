@@ -8,23 +8,22 @@ using DataLibrary.DataAccess;
 
 namespace DataLibrary.BusinessLogic
 {
-    class UserProcessor
+    public static class UserProcessor
     {
         //method to create Users
-        public static int CreateUsers(int id, string userDescription, string userType, DateTime timeStamp)
+        public static int CreateUsers(string userName, string firstName, string lastName)
         {
             //organize the data that will be added
             UserModel data = new UserModel
             {
-                Id = id,
-                UserDescription = UserDescription,
-                UserType = UserType,
-                TimeStamp = timeStamp
+                UserName = userName,
+                FirstName = firstName,
+                LastName = lastName
             };
 
             //create an sql query to create the new User
-            string sql = @"insert into dbo.User (UserDescription, UserType, TimeStamp)
-                            values (@UserDescription, @UserType, @TimeStamp);";
+            string sql = @"insert into dbo.User (UserName, FirstName, LastName)
+                            values (@UserName, @FirstName, @LastName)";
 
             //call the sqlDataAccess to create the new User
             return SqlDataAccess.SaveData(sql, data);
@@ -34,7 +33,7 @@ namespace DataLibrary.BusinessLogic
         public static List<UserModel> LoadUser()
         {
             //create the sql command
-            string sql = @"SELECT Id, UserDescription, UserType, TimeStamp
+            string sql = @"SELECT Id, UserName, FirstName, LastName
                             FROM dbo.User";
             //call the sql data access to load the User data
             return SqlDataAccess.LoadData<UserModel>(sql);
@@ -44,7 +43,7 @@ namespace DataLibrary.BusinessLogic
         public static UserModel LoadOneUser(int id)
         {
             //create the sql command
-            string sql = @"SELECT Id, UserDescription, UserType
+            string sql = @"SELECT Id, UserName, FirstName, LastName
                             FROM dbo.User
                             WHERE Id = @id";
             //call the sql data access to load the User data
@@ -62,21 +61,21 @@ namespace DataLibrary.BusinessLogic
         }
 
         //Method to update User
-        public static void UpdateUser(int id, string UserDescription, string UserType, DateTime timeStamp)
+        public static void UpdateUser(int id, string userName, string firstName, string lastName)
         {
 
             //organize the data that will be added
             UserModel data = new UserModel
             {
                 Id = id,
-                UserDescription = UserDescription,
-                UserType = UserType,
-                TimeStamp = timeStamp
+                UserName = userName,
+                FirstName = firstName,
+                LastName = lastName
             };
 
             //create the sql command
             string sql = @" UPDATE dbo.User
-                            SET UserDescription = @UserDescription, UserType = @UserType, TimeStamp = @TimeStamp 
+                            SET UserName = @UserName, FirstName = @FirstName, LastName = @LastName 
                             WHERE Id = @Id";
 
             //call the sql data access to delete the User entry

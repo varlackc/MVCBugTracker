@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DataLibrary;
-using static DataLibrary.BusinessLogic.TagsProcessor;
+using static DataLibrary.BusinessLogic.UserProcessor;
 using System.Web.Mvc;
 
 namespace MVCBuckTrackerDemo.Controllers
@@ -18,23 +18,27 @@ namespace MVCBuckTrackerDemo.Controllers
             //load the data
             var data = LoadUsers();
             //create a list of projects
-            List<TagsModel> tags = new List<TagsModel>();
+            List<UserModel> users = new List<UserModel>();
 
             // loop to organize the data in the projects list
             foreach (var row in data)
             {
-                tags.Add(new TagsModel
+                users.Add(new UserModel
                 {
                     Id = row.Id,
-                    TagDescription = row.TagDescription,
-                    TagType = row.TagType,
-                    TimeStamp = row.TimeStamp
+                    UserName = row.UserName,
+                    FirstName = row.FirstName,
+                    LastName = row.LastName
                 });
             }
 
-            return View(tags);
+            return View(users);
         }
 
+        private object LoadUsers()
+        {
+            throw new NotImplementedException();
+        }
 
         public ActionResult CreateUser()
         {

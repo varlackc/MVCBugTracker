@@ -67,7 +67,7 @@
     <Build Include="dbo\Tables\Project.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="BuckTrackerDB.refactorlog" />
+    <RefactorLog Include="BugTrackerDB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\BugTrackerDB.publish.xml" />
