@@ -16,7 +16,7 @@ namespace MVCBuckTrackerDemo.Controllers
         public ActionResult UserList()
         {
             //load the data
-            var data = LoadUsers();
+            var data = LoadUser();
             //create a list of projects
             List<UserModel> users = new List<UserModel>();
 
@@ -35,11 +35,6 @@ namespace MVCBuckTrackerDemo.Controllers
             return View(users);
         }
 
-        private object LoadUsers()
-        {
-            throw new NotImplementedException();
-        }
-
         public ActionResult CreateUser()
         {
             TagsModel tag = new TagsModel();
@@ -53,7 +48,7 @@ namespace MVCBuckTrackerDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                int recordsCreated = CreateTags(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
+                int recordsCreated = CreateUser(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
 
                     //TimeStamp = timeStamp
                 //var id = model.BugProjectId;
