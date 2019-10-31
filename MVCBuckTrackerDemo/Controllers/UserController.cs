@@ -60,7 +60,7 @@ namespace MVCBugTrackerDemo.Controllers
         }
 
 
-        public ActionResult DeleteUser(int id)
+        public ActionResult DeleteUsers(int id)
         {
             DeleteUser(id);
             //return View();
