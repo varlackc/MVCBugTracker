@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVCBugTrackerDemo.Models.TagsModel>
+
+@{
+    ViewBag.Title = "TagList";
+}
+
+<h2>TagList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTag")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TagDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TagType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("DeleteTag", "Tag", new { id = item.Id }))
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TagDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TagType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
+            @*Html.ActionLink("Delete", "DeleteTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" })*@
+
+            @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
+            <input class="btn btn-default" type="submit" value="Delete"
+                   onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
+
+
+        </td>
+    </tr>
+    }
+}
+
+</table>
