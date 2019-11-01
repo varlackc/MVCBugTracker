@@ -43,10 +43,10 @@
                 </td>
                 <td>
                     @* HTML Helpers in Razor *@
-                    @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-                    @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
+                    @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
+                    @Html.ActionLink("Project Bugs", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-info btn-large" })
 
-                    <input class="btn btn-default" type="submit" value="Delete"
+                    <input class="btn btn-danger" type="submit" value="Delete"
                            onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
 
                 </td>

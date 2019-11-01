@@ -35,8 +35,8 @@
                     @Html.DisplayFor(modelItem => item.TimeStamp)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-                    <input class="btn btn-default" type="submit" value="Delete"
+                    @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) 
+                    <input class="btn btn-danger" type="submit" value="Delete"
                            onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
                 </td>
             </tr>
