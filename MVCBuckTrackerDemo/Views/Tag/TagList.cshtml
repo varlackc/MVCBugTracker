@@ -36,13 +36,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-                    @*Html.ActionLink("Delete", "DeleteTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" })*@
-
-                    @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
                     <input class="btn btn-default" type="submit" value="Delete"
                            onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
-
-
                 </td>
             </tr>
         }
