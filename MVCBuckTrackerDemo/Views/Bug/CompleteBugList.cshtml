@@ -45,8 +45,8 @@
        <a> @Html.DisplayFor(modelItem => item.BugProjectId) </a>
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default btn-large" })
     </td>
 </tr>
 }
