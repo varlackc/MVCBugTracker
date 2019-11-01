@@ -40,6 +40,31 @@ namespace MVCBugTrackerDemo.Controllers
             return View(bugs);
         }
 
+        public ActionResult CompleteBugList()
+        {
+            int id = -1;
+            //load the data
+            var data = LoadBugs(id);
+            //create a list of projects
+            List<BugModel> bugs = new List<BugModel>();
+
+            // loop to organize the data in the projects list
+            foreach (var row in data)
+            {
+                bugs.Add(new BugModel
+                {
+                    Id = row.Id,
+                    Description = row.Description,
+                    Status = row.Status,
+                    Details = row.Details,
+                    PriorityLevel = row.PriorityLevel,
+                    BugProjectId = row.BugProjectId
+                });
+            }
+
+            ViewBag.message = id;
+            return View(bugs);
+        }
 
         public ActionResult ReportBug(int id)
         {
