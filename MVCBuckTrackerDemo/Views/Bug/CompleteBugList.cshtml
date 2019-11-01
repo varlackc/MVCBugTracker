@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<MVCBugTrackerDemo.Models.BugModel>
 
 @{
-    ViewBag.Title = "CompleteBugList";
+    ViewBag.Title = "List Of All Bugs";
 }
 
-<h2>CompleteBugList</h2>
+    <h2>List Of All Bugs</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -30,28 +27,28 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PriorityLevel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BugProjectId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Details)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PriorityLevel)
+    </td>
+    <!-- Make the Url Clicable -->
+    <td onclick="location.href = '@(Url.Action("ProjectList", "Project", new { id = item.BugProjectId }))'">
+       <a> @Html.DisplayFor(modelItem => item.BugProjectId) </a>
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
 }
 
 </table>
