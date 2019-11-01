@@ -324,7 +324,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataLibrary\DataLibrary.csproj">
+    <ProjectReference Include="..\..\MVCBuckTracker\DataLibrary\DataLibrary.csproj">
       <Project>{971e5b75-ae2d-43a0-9494-9090287f63ec}</Project>
       <Name>DataLibrary</Name>
     </ProjectReference>
