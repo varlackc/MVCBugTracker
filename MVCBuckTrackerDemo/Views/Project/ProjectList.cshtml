@@ -21,9 +21,6 @@
         <th>
             @Html.DisplayNameFor(model => model.DeadLine)
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.BugId)
-            </th>*@
         <th></th>
     </tr>
 
@@ -44,16 +41,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.DeadLine)
                 </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.BugId)
-                    </td>*@
                 <td>
                     @* HTML Helpers in Razor *@
                     @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
                     @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-                    @*Html.ActionLink("Delete", "DeleteProject", new { id = item.Id })*@
 
-                    @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
                     <input class="btn btn-default" type="submit" value="Delete"
                            onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
 
