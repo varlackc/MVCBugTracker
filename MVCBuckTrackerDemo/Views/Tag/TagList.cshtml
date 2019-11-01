@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<MVCBugTrackerDemo.Models.TagsModel>
 
 @{
-    ViewBag.Title = "TagList";
+    ViewBag.Title = "Tag List";
 }
 
-<h2>TagList</h2>
+<h2>Tag List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "CreateTag")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -23,32 +20,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{
-    using (Html.BeginForm("DeleteTag", "Tag", new { id = item.Id }))
+    @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TagDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TagType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-            @*Html.ActionLink("Delete", "DeleteTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" })*@
+        using (Html.BeginForm("DeleteTag", "Tag", new { id = item.Id }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
+                    @*Html.ActionLink("Delete", "DeleteTag", new { id = item.Id }, new { @class = "btn btn-default btn-large" })*@
 
-            @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
-            <input class="btn btn-default" type="submit" value="Delete"
-                   onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
+                    @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
+                    <input class="btn btn-default" type="submit" value="Delete"
+                           onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
 
 
-        </td>
-    </tr>
+                </td>
+            </tr>
+        }
     }
-}
 
 </table>
+
+<p>
+    @Html.ActionLink("Create A New Tag", "CreateTag", null, new { @class = "btn btn-primary btn-large" })
+</p>
