@@ -27,6 +27,9 @@
     </tr>
 
 @foreach (var item in Model) {
+
+    using (Html.BeginForm("DeleteBugs", "Bug", new { id = item.BugProjectId, bugId = item.Id }))
+    {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Description)
@@ -45,10 +48,13 @@
        <a> @Html.DisplayFor(modelItem => item.BugProjectId) </a>
     </td>
     <td>
-        @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-large" })
+        @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) 
+        <input class="btn btn-danger" type="submit" value="Delete"
+               onclick="return confirm(
+                     'Are you sure you want to delete record with ID = @item.Id bug: @item.Description');" />
     </td>
 </tr>
+    }
 }
 
 </table>

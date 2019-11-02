@@ -40,6 +40,8 @@
         @foreach (var item in Model)
         {
 
+            using (Html.BeginForm("DeleteBugs", "Bug", new { id = item.BugProjectId, bugId = item.Id }))
+            {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
@@ -63,6 +65,7 @@
                      'Are you sure you want to delete record with ID = @item.Id bug: @item.Description');" />
                 </td>
             </tr>
+            }
         }
     </table>
 }
