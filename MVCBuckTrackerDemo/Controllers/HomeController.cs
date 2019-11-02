@@ -9,8 +9,10 @@ using System.Web.Mvc;
 
 namespace MVCBugTrackerDemo.Controllers
 {
+    
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return RedirectToAction("ProjectList", "Project");

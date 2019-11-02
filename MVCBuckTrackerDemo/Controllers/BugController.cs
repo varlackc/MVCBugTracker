@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MVCBugTrackerDemo.Controllers
 {
+    
     public class BugController : Controller
     {
         //------------ Bug Section ------------------
