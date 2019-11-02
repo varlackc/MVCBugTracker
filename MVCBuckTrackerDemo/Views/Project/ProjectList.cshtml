@@ -30,7 +30,9 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    <a onclick="location.href = '@(Url.Action("BugList", "Bug", new { id = item.Id }))'">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
