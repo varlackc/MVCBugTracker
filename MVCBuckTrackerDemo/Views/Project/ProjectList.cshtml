@@ -4,11 +4,7 @@
     ViewBag.Title = "Project List";
 }
 
-<h2>Project List</h2>
-
-<p>
-    @Html.ActionLink("Create New Project", "Create")
-</p>
+<h2>List Of All Projects</h2>
 
 <!-- Need to only run if the model is not null  -->
 <table class="table">
@@ -25,9 +21,6 @@
         <th>
             @Html.DisplayNameFor(model => model.DeadLine)
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.BugId)
-            </th>*@
         <th></th>
     </tr>
 
@@ -48,23 +41,22 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.DeadLine)
                 </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.BugId)
-                    </td>*@
-            <td>
-                @* HTML Helpers in Razor *@
-                @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class ="btn btn-default btn-large"} ) |
-                @Html.ActionLink("Details", "BugList", "Bug", new { id = item.Id }, new { @class ="btn btn-default btn-large"}) |
-                @*Html.ActionLink("Delete", "DeleteProject", new { id = item.Id })*@
+                <td>
+                    @* HTML Helpers in Razor *@
+                    @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
+                    @Html.ActionLink("Project Bugs", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-info btn-large" })
 
-                @* This form is used to create the buttom the onclick atttribute allows to confirm choice before sending*@
-                <input class="btn btn-default" type="submit" value="Delete"
-                       onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
+                    <input class="btn btn-danger" type="submit" value="Delete"
+                           onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
 
-            </td>
+                </td>
 
             </tr>
         }
     }
 
 </table>
+
+<p>
+    @Html.ActionLink("Create A New Project", "Create", null, new { @class = "btn btn-primary btn-large" })
+</p>

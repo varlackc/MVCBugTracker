@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVCBugTrackerDemo.Models.BugModel>
+
+@{
+    ViewBag.Title = "List Of All Bugs";
+}
+
+    <h2>List Of All Bugs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriorityLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BugProjectId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Details)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PriorityLevel)
+    </td>
+    <!-- Make the Url Clicable -->
+    <td onclick="location.href = '@(Url.Action("ProjectList", "Project", new { id = item.BugProjectId }))'">
+       <a> @Html.DisplayFor(modelItem => item.BugProjectId) </a>
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-large" })
+    </td>
+</tr>
+}
+
+</table>

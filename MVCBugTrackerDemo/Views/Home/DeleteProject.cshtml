@@ -1,0 +1,26 @@
+﻿@model MVCBuckTrackerDemo.Models.ProjectModel
+
+<h2>Delete Project</h2>
+
+@using (Html.BeginForm("DeleteProject", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.Id)
+    <div class="form-group">
+        <label>Project Name</label>
+        <p>@Model.Name</p>
+    </div>
+
+    <div class="form-group">
+        <label>Project Description</label>
+        <p>@Model.Description</p>
+    </div>
+
+    <div class="form-group">
+        <label>Project DeadLine</label>
+        <p>@Model.DeadLine</p>
+    </div>
+
+    <div>
+        <input type="submit" value="Delete"/>
+    </div>
+}

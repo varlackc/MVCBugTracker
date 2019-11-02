@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MVCBugTrackerDemo.Models.BugModel>
 
 @{
-    ViewBag.Title = "BugList";
+    ViewBag.Title = "Bug Related To Project";
 
     int retrievedId = ViewBag.message;
 
@@ -13,11 +13,7 @@
 }
 
 
-<h2>BugList</h2>
-
-<p>
-    @Html.ActionLink("Report Bug", "ReportBug", new { id = retrievedId })
-</p>
+<h2>List Of The Bug Related To The Project</h2>
 
 @if (Model.Count() != 0 && Model.Count() != 0)
 {
@@ -61,8 +57,8 @@
                     @Html.DisplayFor(modelItem => item.BugProjectId)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-default btn-large" }) |
-                    <input class="btn btn-default" type="submit" value="Delete"
+                    @Html.ActionLink("Edit", "UpdateBugs", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) 
+                    <input class="btn btn-danger" type="submit" value="Delete"
                            onclick="return confirm(
                      'Are you sure you want to delete record with ID = @item.Id bug: @item.Description');" />
                 </td>
@@ -70,3 +66,7 @@
         }
     </table>
 }
+
+<p>
+    @Html.ActionLink("Report A New Bug", "ReportBug", new { id = retrievedId }, new { @class = "btn btn-primary btn-large" })
+</p>

@@ -37,10 +37,10 @@ namespace MVCBugTrackerDemo.Controllers
 
         public ActionResult CreateUser()
         {
-            TagsModel tag = new TagsModel();
+            UserModel user = new UserModel();
            // bug.BugProjectId = id;
 
-            return View(tag);
+            return View(user);
         }
 
         [HttpPost]
@@ -52,19 +52,19 @@ namespace MVCBugTrackerDemo.Controllers
 
                     //TimeStamp = timeStamp
                 //var id = model.BugProjectId;
-                return RedirectToAction("TagList");
+                return RedirectToAction("UserList");
             }
 
-            ViewBag.Message = "Tag List";
+            ViewBag.Message = "User List";
             return View();
         }
 
 
-        public ActionResult DeleteUser(int id)
+        public ActionResult DeleteUsers(int id)
         {
             DeleteUser(id);
             //return View();
-            return RedirectToAction("TagList");
+            return RedirectToAction("UserList");
         }
         
         [HttpGet]
@@ -73,14 +73,14 @@ namespace MVCBugTrackerDemo.Controllers
             //get the results from the databaase
             var resultModel = LoadOneUser(id);
             //convert the results in a way that the view can understand
-            UserModel TagsModel = new UserModel();
+            UserModel userModel = new UserModel();
 
-            TagsModel.Id = resultModel.Id;
-            TagsModel.UserName = resultModel.UserName;
-            TagsModel.FirstName = resultModel.FirstName;
-            TagsModel.LastName = resultModel.LastName;
+            userModel.Id = resultModel.Id;
+            userModel.UserName = resultModel.UserName;
+            userModel.FirstName = resultModel.FirstName;
+            userModel.LastName = resultModel.LastName;
 
-            return View(TagsModel);
+            return View(userModel);
         }
 
         [HttpPost]
@@ -91,10 +91,8 @@ namespace MVCBugTrackerDemo.Controllers
                 UpdateUsers(model.Id, model.UserName, model.FirstName, model.LastName);
             }
             //var id = model.BugProjectId;
-            return RedirectToAction("TagList"); ;
+            return RedirectToAction("UserList"); ;
         }
-
-
         //-------------------------------------------
 
     }
