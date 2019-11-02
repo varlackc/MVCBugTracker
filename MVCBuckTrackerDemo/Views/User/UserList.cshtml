@@ -7,44 +7,47 @@
 <h2>List Of Users</h2>
 
 <table class="table table-bordered table-hover">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-
-        using (Html.BeginForm("DeleteUsers", "User", new { id = item.Id }))
-        {
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "UpdateUser", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
-                <input class="btn btn-danger" type="submit" value="Delete"
-                       onclick="return confirm(
-        'Are you sure you want to delete record with ID = @item.Id bug: @item.UserName');" />
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th></th>
         </tr>
-        }
-    }
+    </thead>
 
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            using (Html.BeginForm("DeleteUsers", "User", new { id = item.Id }))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "UpdateUser", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
+                        <input class="btn btn-danger" type="submit" value="Delete"
+                               onclick="return confirm(
+        'Are you sure you want to delete record with ID = @item.Id bug: @item.UserName');" />
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
 </table>
 
 <p>

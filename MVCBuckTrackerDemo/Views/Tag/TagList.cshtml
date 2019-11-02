@@ -7,42 +7,45 @@
 <h2>Tag List</h2>
 
 <table class="table table-bordered table-hover">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TagDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TagType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
-        <th></th>
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TagDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-    @foreach (var item in Model)
-    {
-        using (Html.BeginForm("DeleteTag", "Tag", new { id = item.Id }))
+    <tbody>
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TagDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TagType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-success btn-large" }) 
-                    <input class="btn btn-danger" type="submit" value="Delete"
-                           onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
-                </td>
-            </tr>
+            using (Html.BeginForm("DeleteTag", "Tag", new { id = item.Id }))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TagDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TagType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "UpdateTag", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
+                        <input class="btn btn-danger" type="submit" value="Delete"
+                               onclick="return confirm('Are you sure you want to delete record with ID = @item.Id Tag: @item.TagDescription');" />
+                    </td>
+                </tr>
+            }
         }
-    }
-
+    </tbody>
 </table>
 
 <p>

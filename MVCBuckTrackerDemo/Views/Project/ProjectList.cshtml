@@ -8,6 +8,7 @@
 
 <!-- Need to only run if the model is not null  -->
 <table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Id)
@@ -23,40 +24,42 @@
         </th>
         <th></th>
     </tr>
+    </thead>
 
-    @foreach (var item in Model)
-    {
-        using (Html.BeginForm("DeleteProjects", "Project", new { id = item.Id }))
+    <tbody>
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <a onclick="location.href = '@(Url.Action("BugList", "Bug", new { id = item.Id }))'">
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DeadLine)
-                </td>
-                <td>
-                    @* HTML Helpers in Razor *@
-                    @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
-                    @Html.ActionLink("Project Bugs", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-info btn-large" })
+            using (Html.BeginForm("DeleteProjects", "Project", new { id = item.Id }))
+            {
+                <tr>
+                    <td>
+                        <a onclick="location.href = '@(Url.Action("BugList", "Bug", new { id = item.Id }))'">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeadLine)
+                    </td>
+                    <td>
+                        @* HTML Helpers in Razor *@
+                        @Html.ActionLink("Edit", "UpdateProjects", new { id = item.Id }, new { @class = "btn btn-success btn-large" })
+                        @Html.ActionLink("Project Bugs", "BugList", "Bug", new { id = item.Id }, new { @class = "btn btn-info btn-large" })
 
-                    <input class="btn btn-danger" type="submit" value="Delete"
-                           onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
+                        <input class="btn btn-danger" type="submit" value="Delete"
+                               onclick="return confirm('Are you sure you want to delete record with ID = @item.Id project: @item.Name');" />
 
-                </td>
+                    </td>
 
-            </tr>
+                </tr>
+            }
         }
-    }
-
+    </tbody>
 </table>
 
 <p>
