@@ -13,7 +13,7 @@ namespace MVCBugTrackerDemo.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("ProjectList", "Project");
         }
 
         public ActionResult About()
