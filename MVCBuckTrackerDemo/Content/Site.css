@@ -1,6 +1,6 @@
 ﻿
 body {
-    color:aliceblue;
+    color:burlywood;
     background-image: url('/Content/img/bugTracker.jpg');
     padding-top: 50px;
     padding-bottom: 20px;
@@ -26,3 +26,32 @@ select,
 textarea {
     max-width: 280px;
 }
+
+thead tr th {
+    color: #0c0f3a;
+    background-color: rgba(51, 102, 153, 100 );
+    font-size: 15px;
+}
+
+
+tbody tr td {
+    font-weight: bold;
+}
+
+tbody tr td {
+    text-align: right;
+}
+
+    tbody tr td.left {
+        text-align: left;
+        white-space: nowrap;
+    }
+
+tbody tr {
+    background-color: rgba(120, 161, 188, 0.4);
+}
+
+    tbody tr:hover {
+        background-color: khaki;
+        color: #003813;
+    }
