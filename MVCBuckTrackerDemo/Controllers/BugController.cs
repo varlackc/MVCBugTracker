@@ -18,14 +18,10 @@ namespace MVCBugTrackerDemo.Controllers
         //Regular Project View
         public ActionResult BugList(int id)
         {
-                //load the data
-                var data = LoadBugs(id);
-                //create a list of projects
-                List<BugModel> bugs = new List<BugModel>();
-
-                // loop to organize the data in the projects list
-                foreach (var row in data)
-                {
+            var data = LoadBugs(id); //load the data                              
+            List<BugModel> bugs = new List<BugModel>(); //create a list of projects
+            foreach (var row in data) // loop to organize the data in the projects list
+            {
                     bugs.Add(new BugModel
                     {
                         Id = row.Id,
@@ -35,8 +31,7 @@ namespace MVCBugTrackerDemo.Controllers
                         PriorityLevel = row.PriorityLevel,
                         BugProjectId = row.BugProjectId
                     });
-                }
-
+             }
             ViewBag.message = id;
             return View(bugs);
         }
@@ -44,13 +39,9 @@ namespace MVCBugTrackerDemo.Controllers
         public ActionResult CompleteBugList()
         {
             int id = -1;
-            //load the data
-            var data = LoadBugs(id);
-            //create a list of projects
-            List<BugModel> bugs = new List<BugModel>();
-
-            // loop to organize the data in the projects list
-            foreach (var row in data)
+            var data = LoadBugs(id); //load the data
+            List<BugModel> bugs = new List<BugModel>(); //create a list of projects
+            foreach (var row in data) // loop to organize the data in the projects list
             {
                 bugs.Add(new BugModel
                 {
@@ -62,7 +53,6 @@ namespace MVCBugTrackerDemo.Controllers
                     BugProjectId = row.BugProjectId
                 });
             }
-
             ViewBag.message = id;
             return View(bugs);
         }
@@ -72,7 +62,6 @@ namespace MVCBugTrackerDemo.Controllers
             ViewBag.Message = id;
             BugModel bug = new BugModel();
             bug.BugProjectId = id;
-
             return View(bug);
         }
 
@@ -82,31 +71,26 @@ namespace MVCBugTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = CreateBug(model.Id, model.Description, model.Status, model.Details,
-                                                model.PriorityLevel, model.BugProjectId);
+                                               model.PriorityLevel, model.BugProjectId);
                 var id = model.BugProjectId;
                 return RedirectToAction("BugList", new { id});
             }
-
             ViewBag.Message = "Bug List";
             return View();
         }
 
-
         public ActionResult DeleteBugs(int id, int bugId)
         {
             DeleteBug(bugId);
-            //return View();
             return RedirectToAction("BugList", new { id });
         }
         
         [HttpGet]
         public ActionResult UpdateBugs(int id)
         {
-            //get the results from the databaase
-            var resultModel = LoadOneBug(id);
-            //convert the results in a way that the view can understand
+            var resultModel = LoadOneBug(id);//get the results from the database
             BugModel bugModel = new BugModel();
-
+            //convert the results in a way that the view can understand
             bugModel.Id = resultModel.Id;
             bugModel.Description = resultModel.Description;
             bugModel.Status = resultModel.Status;
@@ -122,14 +106,11 @@ namespace MVCBugTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 UpdateBug(model.Id, model.Description,
-        model.Status, model.Details, model.PriorityLevel, model.BugProjectId);
+                          model.Status, model.Details, model.PriorityLevel, model.BugProjectId);
             }
             var id = model.BugProjectId;
             return RedirectToAction("BugList", new { id }); ;
         }
-
-
         //-------------------------------------------
-
     }
 }
