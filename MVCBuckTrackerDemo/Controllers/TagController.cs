@@ -16,13 +16,9 @@ namespace MVCBugTrackerDemo.Controllers
         //Regular Project View
         public ActionResult TagList()
         {
-            //load the data
-            var data = LoadTags();
-            //create a list of projects
-            List<TagsModel> tags = new List<TagsModel>();
-
-            // loop to organize the data in the projects list
-            foreach (var row in data)
+            var data = LoadTags(); //load the data   
+            List<TagsModel> tags = new List<TagsModel>(); //create a list of projects
+            foreach (var row in data)// loop to organize the data in the projects list
             {
                 tags.Add(new TagsModel
                 {
@@ -32,16 +28,12 @@ namespace MVCBugTrackerDemo.Controllers
                     TimeStamp = row.TimeStamp
                 });
             }
-
             return View(tags);
         }
-
 
         public ActionResult CreateTag()
         {
             TagsModel tag = new TagsModel();
-           // bug.BugProjectId = id;
-
             return View(tag);
         }
 
@@ -51,32 +43,23 @@ namespace MVCBugTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = CreateTags(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
-
-                    //TimeStamp = timeStamp
-                //var id = model.BugProjectId;
                 return RedirectToAction("TagList");
             }
-
             ViewBag.Message = "Tag List";
             return View();
         }
 
-
         public ActionResult DeleteTag(int id)
         {
             DeleteTags(id);
-            //return View();
             return RedirectToAction("TagList");
         }
         
         [HttpGet]
         public ActionResult UpdateTag(int id)
         {
-            //get the results from the databaase
-            var resultModel = LoadOneTag(id);
-            //convert the results in a way that the view can understand
-            TagsModel TagsModel = new TagsModel();
-
+            var resultModel = LoadOneTag(id); //get the results from the databaase
+            TagsModel TagsModel = new TagsModel(); //convert the results in a way that the view can understand
             TagsModel.Id = resultModel.Id;
             TagsModel.TagDescription = resultModel.TagDescription;
             TagsModel.TagType = resultModel.TagType;
@@ -90,12 +73,8 @@ namespace MVCBugTrackerDemo.Controllers
             {
                 UpdateTags(model.Id, model.TagDescription, model.TagType, model.TimeStamp);
             }
-            //var id = model.BugProjectId;
             return RedirectToAction("TagList"); ;
         }
-
-
         //-------------------------------------------
-
     }
 }
