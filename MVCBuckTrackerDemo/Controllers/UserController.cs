@@ -11,17 +11,12 @@ namespace MVCBugTrackerDemo.Controllers
 {
     public class UserController : Controller
     {
-
         //Regular Project View
         public ActionResult UserList()
         {
-            //load the data
-            var data = LoadUser();
-            //create a list of projects
-            List<UserModel> users = new List<UserModel>();
-
-            // loop to organize the data in the projects list
-            foreach (var row in data)
+            var data = LoadUser(); //load the data
+            List<UserModel> users = new List<UserModel>(); //create a list of projects
+            foreach (var row in data) // loop to organize the data in the projects list
             {
                 users.Add(new UserModel
                 {
@@ -31,15 +26,12 @@ namespace MVCBugTrackerDemo.Controllers
                     LastName = row.LastName
                 });
             }
-
             return View(users);
         }
 
         public ActionResult CreateUser()
         {
             UserModel user = new UserModel();
-           // bug.BugProjectId = id;
-
             return View(user);
         }
 
@@ -49,12 +41,8 @@ namespace MVCBugTrackerDemo.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = CreateUsers(model.UserName, model.FirstName, model.LastName);
-
-                    //TimeStamp = timeStamp
-                //var id = model.BugProjectId;
                 return RedirectToAction("UserList");
             }
-
             ViewBag.Message = "User List";
             return View();
         }
@@ -63,17 +51,14 @@ namespace MVCBugTrackerDemo.Controllers
         public ActionResult DeleteUsers(int id)
         {
             DeleteUser(id);
-            //return View();
             return RedirectToAction("UserList");
         }
         
         [HttpGet]
         public ActionResult UpdateUser(int id)
         {
-            //get the results from the databaase
-            var resultModel = LoadOneUser(id);
-            //convert the results in a way that the view can understand
-            UserModel userModel = new UserModel();
+            var resultModel = LoadOneUser(id); //get the results from the databaase
+            UserModel userModel = new UserModel(); //convert the results in a way that the view can understand
 
             userModel.Id = resultModel.Id;
             userModel.UserName = resultModel.UserName;
@@ -90,10 +75,8 @@ namespace MVCBugTrackerDemo.Controllers
             {
                 UpdateUsers(model.Id, model.UserName, model.FirstName, model.LastName);
             }
-            //var id = model.BugProjectId;
             return RedirectToAction("UserList"); ;
         }
         //-------------------------------------------
-
     }
 }
