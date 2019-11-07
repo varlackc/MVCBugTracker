@@ -13,28 +13,19 @@ namespace MVCBugTrackerDemo.Controllers
         public ActionResult ProjectList()
         {
             ViewBag.Message = "Project List From View Bag Message";
-
-            //load the data
-            var data = LoadProjects();
-            //create a list of projects
-            List<ProjectModel> projects = new List<ProjectModel> ();
-
-            // loop to organize the data in the projects list
-            foreach (var row in data)
+            var data = LoadProjects();//load the data
+            List<ProjectModel> projects = new List<ProjectModel> ();//create a list of projects
+            foreach (var row in data)// loop to organize the data in the projects list
             {
                 projects.Add(new ProjectModel {
                     Id = row.Id, 
                     Name = row.Name, 
                     Description = row.Description,
                     DeadLine = row.DeadLine
-                    //BugId = row.BugId
-
                 });
             }
-
             return View(projects);
         }
-
 
         public ActionResult Create()
         {
@@ -47,29 +38,24 @@ namespace MVCBugTrackerDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                int recordsCreated = CreateProject(model.Id,
-                    model.Name, model.Description, model.DeadLine);
+                int recordsCreated = CreateProject(model.Id, model.Name, model.Description, model.DeadLine);
                 return RedirectToAction("ProjectList");
             }
-
             ViewBag.Message = "Project List";
             return View();
         }
 
-        public ActionResult DeleteProjects(int Id) {
-
+        public ActionResult DeleteProjects(int Id)
+        {
             DeleteProject(Id);
-            //return View();
             return RedirectToAction("ProjectList");
         }
 
         [HttpGet]
         public ActionResult UpdateProjects(int id)
         {
-            //get the results from the databaase
-            var resultModel = LoadOneProject(id);
-            //convert the results in a way that the view can understand
-            ProjectModel projectModel = new ProjectModel();
+            var resultModel = LoadOneProject(id); //get the results from the databaase
+            ProjectModel projectModel = new ProjectModel(); //convert the results in a way that the view can understand
             projectModel.Id = resultModel.Id;
             projectModel.Name = resultModel.Name;
             projectModel.Description = resultModel.Description;
@@ -85,9 +71,7 @@ namespace MVCBugTrackerDemo.Controllers
                 UpdateProject(model.Id,
                     model.Name, model.Description);
             }
-
             return RedirectToAction("ProjectList"); ;
         }
-
     }
 }
