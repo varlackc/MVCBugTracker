@@ -68,8 +68,7 @@ namespace MVCBugTrackerDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                UpdateProject(model.Id,
-                    model.Name, model.Description);
+                UpdateProject(model.Id, model.Name, model.Description);
             }
             return RedirectToAction("ProjectList"); ;
         }
