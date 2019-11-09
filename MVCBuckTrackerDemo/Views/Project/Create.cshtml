@@ -26,7 +26,6 @@
     </script>
 }
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -72,6 +71,5 @@
     @Html.ActionLink("Back to List", "ProjectList", null, new { @class = "btn btn-primary btn-large" })
 
 </div>
-
 
 @Scripts.Render("~/bundles/jqueryval")

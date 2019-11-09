@@ -2,16 +2,13 @@
 
 @{
     ViewBag.Title = "Bug Related To Project";
-
     int retrievedId = ViewBag.message;
-
 }
 
 @if (retrievedId == null)
 {
     <h2>An Error Has Occured The Page Is Not Reachable</h2>
 }
-
 
 <h2><i class="fa fa-bug" aria-hidden="true"></i> List Of The Bug Related To The Project</h2>
 
@@ -42,7 +39,6 @@
         <tbody>
             @foreach (var item in Model)
             {
-
                 using (Html.BeginForm("DeleteBugs", "Bug", new { id = item.BugProjectId, bugId = item.Id }))
                 {
                     <tr>
