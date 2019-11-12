@@ -78,6 +78,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(bug);
         }
 
+        /// <summary>
+        /// Report Bug Controller
+        /// </summary>
+        /// <param name="model"> Bug Model </param>
+        /// <returns>Create A New Bug</returns>
         [HttpPost]
         public ActionResult ReportBug(BugModel model)
         {
@@ -92,6 +97,12 @@ namespace MVCBugTrackerDemo.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Delete Bug
+        /// </summary>
+        /// <param name="id">Project ID</param>
+        /// <param name="bugId">Bug ID</param>
+        /// <returns>Delete The Bug</returns>
         public ActionResult DeleteBugs(int id, int bugId)
         {
             DeleteBug(bugId);
