@@ -15,7 +15,11 @@ namespace MVCBugTrackerDemo.Controllers
     {
         //------------ Bug Section ------------------
         
-        //Regular Project View
+        /// <summary>
+        /// Bug List Controller 
+        /// </summary>
+        /// <param name="id">Project Id</param>
+        /// <returns>List Of Bugs Related To The Project ID</returns>
         public ActionResult BugList(int id)
         {
             var data = LoadBugs(id); //load the data                              
@@ -36,6 +40,10 @@ namespace MVCBugTrackerDemo.Controllers
             return View(bugs);
         }
 
+        /// <summary>
+        /// List Of All Bugs Controller
+        /// </summary>
+        /// <returns>List Of All Bugs</returns>
         public ActionResult CompleteBugList()
         {
             int id = -1;
@@ -57,6 +65,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(bugs);
         }
 
+        /// <summary>
+        /// Report Bug Controller
+        /// </summary>
+        /// <param name="id">Project Id</param>
+        /// <returns>Create New Bug After Inserting Project Id</returns>
         public ActionResult ReportBug(int id)
         {
             ViewBag.Message = id;
