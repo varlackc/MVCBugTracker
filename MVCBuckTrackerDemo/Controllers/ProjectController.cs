@@ -10,6 +10,11 @@ namespace MVCBugTrackerDemo.Controllers
     public class ProjectController : Controller
     {
         //Regular Project View
+
+        /// <summary>
+        /// Project List Controller
+        /// </summary>
+        /// <returns>List Of Projects</returns>
         public ActionResult ProjectList()
         {
             ViewBag.Message = "Project List From View Bag Message";
@@ -27,12 +32,21 @@ namespace MVCBugTrackerDemo.Controllers
             return View(projects);
         }
 
+        /// <summary>
+        /// Create A New Project
+        /// </summary>
+        /// <returns>Create A New Project</returns>
         public ActionResult Create()
         {
             ViewBag.Message = "Project List";
             return View();
         }
         
+        /// <summary>
+        /// Create A New Project (Post)
+        /// </summary>
+        /// <param name="model">Project Model</param>
+        /// <returns>Post A New Created Project</returns>
         [HttpPost]
         public ActionResult Create(ProjectModel model)
         {
@@ -45,12 +59,22 @@ namespace MVCBugTrackerDemo.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Delete A Project
+        /// </summary>
+        /// <param name="Id">Project ID</param>
+        /// <returns>Delete A Project That Was Specified By ID</returns>
         public ActionResult DeleteProjects(int Id)
         {
             DeleteProject(Id);
             return RedirectToAction("ProjectList");
         }
 
+        /// <summary>
+        /// Update Project Controller
+        /// </summary>
+        /// <param name="id">Project ID</param>
+        /// <returns>Update The Project Given By Project ID</returns>
         [HttpGet]
         public ActionResult UpdateProjects(int id)
         {
@@ -63,6 +87,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(projectModel);
         }
 
+        /// <summary>
+        /// Update Project Controller (Post)
+        /// </summary>
+        /// <param name="model">Project Model</param>
+        /// <returns>Update The Project ID</returns>
         [HttpPost]
         public ActionResult UpdateProjects(ProjectModel model)
         {
