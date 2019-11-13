@@ -1,9 +1,5 @@
 ﻿using MVCBugTrackerDemo.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DataLibrary;
 using static DataLibrary.BusinessLogic.TagsProcessor;
 using System.Web.Mvc;
 
