@@ -14,6 +14,11 @@ namespace MVCBugTrackerDemo.Controllers
         //------------ Bug Section ------------------
 
         //Regular Project View
+
+        /// <summary>
+        /// Tag List Controller
+        /// </summary>
+        /// <returns>List Of Tags</returns>
         public ActionResult TagList()
         {
             var data = LoadTags(); //load the data   
@@ -31,12 +36,21 @@ namespace MVCBugTrackerDemo.Controllers
             return View(tags);
         }
 
+        /// <summary>
+        /// Create Tag Controller
+        /// </summary>
+        /// <returns>Create A New Tag</returns>
         public ActionResult CreateTag()
         {
             TagsModel tag = new TagsModel();
             return View(tag);
         }
 
+        /// <summary>
+        /// Create Tag Controller (model)
+        /// </summary>
+        /// <param name="model">Tag Model</param>
+        /// <returns>Create A Tag Controller</returns>
         [HttpPost]
         public ActionResult CreateTag(TagsModel model)
         {
@@ -49,12 +63,22 @@ namespace MVCBugTrackerDemo.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Delete Tag Controller
+        /// </summary>
+        /// <param name="id">Tag ID</param>
+        /// <returns>Delete A Tag By ID</returns>
         public ActionResult DeleteTag(int id)
         {
             DeleteTags(id);
             return RedirectToAction("TagList");
         }
         
+        /// <summary>
+        /// Update Tag Controller
+        /// </summary>
+        /// <param name="id">Tag ID</param>
+        /// <returns>Update Tag By Tag ID</returns>
         [HttpGet]
         public ActionResult UpdateTag(int id)
         {
@@ -66,6 +90,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(TagsModel);
         }
 
+        /// <summary>
+        /// Update Tag Controller (Post)
+        /// </summary>
+        /// <param name="model">Tag Model</param>
+        /// <returns>Update Tag Controller By ID</returns>
         [HttpPost]
         public ActionResult UpdateTag(TagsModel model)
         {
