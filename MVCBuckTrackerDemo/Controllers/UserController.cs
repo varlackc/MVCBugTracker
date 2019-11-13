@@ -12,6 +12,11 @@ namespace MVCBugTrackerDemo.Controllers
     public class UserController : Controller
     {
         //Regular Project View
+
+        /// <summary>
+        /// User List Controller
+        /// </summary>
+        /// <returns>Display User List</returns>
         public ActionResult UserList()
         {
             var data = LoadUser(); //load the data
@@ -29,12 +34,21 @@ namespace MVCBugTrackerDemo.Controllers
             return View(users);
         }
 
+        /// <summary>
+        /// Create User Controller
+        /// </summary>
+        /// <returns>Create A New User</returns>
         public ActionResult CreateUser()
         {
             UserModel user = new UserModel();
             return View(user);
         }
 
+        /// <summary>
+        /// Create User Controller
+        /// </summary>
+        /// <param name="model">User Model</param>
+        /// <returns>Create A New User</returns>
         [HttpPost]
         public ActionResult CreateUser(UserModel model)
         {
@@ -47,13 +61,22 @@ namespace MVCBugTrackerDemo.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Delete User Controller
+        /// </summary>
+        /// <param name="id">User ID</param>
+        /// <returns>Delete A User By ID</returns>
         public ActionResult DeleteUsers(int id)
         {
             DeleteUser(id);
             return RedirectToAction("UserList");
         }
         
+        /// <summary>
+        /// Update User Controller
+        /// </summary>
+        /// <param name="id">User ID</param>
+        /// <returns>Update User By User ID</returns>
         [HttpGet]
         public ActionResult UpdateUser(int id)
         {
@@ -68,6 +91,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(userModel);
         }
 
+        /// <summary>
+        /// Update User Controller (Post)
+        /// </summary>
+        /// <param name="model">User Model</param>
+        /// <returns>Update The User By User ID</returns>
         [HttpPost]
         public ActionResult UpdateUser(UserModel model)
         {
