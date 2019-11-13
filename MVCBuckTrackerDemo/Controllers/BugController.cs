@@ -109,6 +109,11 @@ namespace MVCBugTrackerDemo.Controllers
             return RedirectToAction("BugList", new { id });
         }
         
+        /// <summary>
+        /// Update Bug Controller
+        /// </summary>
+        /// <param name="id">Bug ID</param>
+        /// <returns>Update The Bug Given By The Bug ID</returns>
         [HttpGet]
         public ActionResult UpdateBugs(int id)
         {
@@ -124,6 +129,11 @@ namespace MVCBugTrackerDemo.Controllers
             return View(bugModel);
         }
 
+        /// <summary>
+        /// Update Bug Controller (Post)
+        /// </summary>
+        /// <param name="model">Bug Model</param>
+        /// <returns>Update Bug</returns>
         [HttpPost]
         public ActionResult UpdateBugs(BugModel model)
         {
