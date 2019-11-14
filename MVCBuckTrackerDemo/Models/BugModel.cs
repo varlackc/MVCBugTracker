@@ -7,6 +7,9 @@ namespace MVCBugTrackerDemo.Models
 {
     public class BugModel
     {
+        /// <summary>
+        /// Bug Model
+        /// </summary>
         public int Id { get; set; }
         public string Description { get; set; }
         //public DateTime TimeStamp { get; set; }
