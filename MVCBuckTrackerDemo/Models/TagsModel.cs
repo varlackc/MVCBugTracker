@@ -5,6 +5,9 @@ using System.Web;
 
 namespace MVCBugTrackerDemo.Models
 {
+    /// <summary>
+    /// Tags Model
+    /// </summary>
     public class TagsModel
     {
         public int Id { get; set; }

@@ -8,6 +8,9 @@ using System.ComponentModel;
 
 namespace MVCBugTrackerDemo.Models
 {
+    /// <summary>
+    /// Project Model
+    /// </summary>
     public class ProjectModel
     {
 

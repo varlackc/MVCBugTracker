@@ -5,6 +5,9 @@ using System.Web;
 
 namespace MVCBugTrackerDemo.Models
 {
+    /// <summary>
+    /// User Model
+    /// </summary>
     public class UserModel
     {
         public int Id { get; set; }
