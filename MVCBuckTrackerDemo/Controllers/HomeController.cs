@@ -1,4 +1,16 @@
-﻿using System.Web.Mvc;
+﻿/*****************************************************************************
+*                Bug Tracking Application
+*
+*    Created By: Carlos Maxwell Varlack
+*
+*    Purpose: This application can keep track of issues in projects
+*             Bug Trackers are very useful tools to improve software quality
+*
+*   Version: V0.1 Pre-release 
+*   
+ ****************************************************************************/
+
+using System.Web.Mvc;
 
 namespace MVCBugTrackerDemo.Controllers
 {

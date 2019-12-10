@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Model
 {
+    //bug model
     public class BugModel
     {
         public int Id { get; set; }
