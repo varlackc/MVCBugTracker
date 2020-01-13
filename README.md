@@ -20,3 +20,7 @@ as the starting project.
 Verify that you have a local installation of sql. 
 compile and run the application
 
+# Example of the program
+
+![Screen Shot Of the application](https://github.com/varlackc/varlackc.github.io/blob/master/images/BugTracker.gif)
+
